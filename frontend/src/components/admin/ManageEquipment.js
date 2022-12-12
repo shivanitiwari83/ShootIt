@@ -2,16 +2,11 @@ import React from 'react';
 import {Formik} from 'formik';
 import Swal from 'sweetalert2';
 
-const Register = () => {
+const ManageEquipment = () => {
 
     const userSubmit = async (formdata) => {
         console.log(formdata);
 
-        //1. url  
-        //2. request method 
-        //3. data 
-        //4. data format
-        //asynchronous function - return promise 
         const response = await fetch('http://localhost:5000/user/add',{
             method : 'POST',
             body : JSON.stringify(formdata),
@@ -38,7 +33,7 @@ const Register = () => {
                 <div className="card-body">
                     <h3 className="text-center">Register Here</h3>
                     <Formik
-                        initialValues={{username: '', email: '', password: '', age: 0}}
+                        initialValues={{title: '', description: '', category: '', price: 0, rentPrice: 0, image: '', createdAt: new Date()}}
                         onSubmit={userSubmit}
                     >
                         {({values, handleSubmit, handleChange}) => (
@@ -68,4 +63,4 @@ const Register = () => {
 
 }
 
-export default Register
+export default ManageEquipment;

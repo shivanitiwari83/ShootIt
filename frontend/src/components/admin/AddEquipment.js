@@ -2,7 +2,7 @@ import React from 'react';
 import {Formik} from 'formik';
 import Swal from 'sweetalert2';
 
-const Register = () => {
+const AddEquipment = () => {
 
     const userSubmit = async (formdata) => {
         console.log(formdata);
@@ -56,7 +56,6 @@ const Register = () => {
                             <input className='form-control' id="age" onChange={handleChange} value={values.age} />
     
                             <button type="submit" className='btn btn-primary mt-5'>Submit</button>
-    
                         </form>
                         )}
                     </Formik>
@@ -68,4 +67,4 @@ const Register = () => {
 
 }
 
-export default Register
+export default AddEquipment;

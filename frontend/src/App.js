@@ -9,23 +9,32 @@ import User from './components/user';
 import AdminProfile from './components/admin/Profile';
 import UserProfile from './components/user/Profile';
 import Header from './components/main/Header';
+import Home from './components/main/Home';
+import ManageUser from './components/admin/ManageUser';
+import AddEquipment from './components/admin/AddEquipment';
+import ManageEquipment from './components/admin/ManageEquipment';
+import ListEquipment from './components/main/ListEquipment';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Header />
         <Routes>
 
           <Route element={<Navigate to="/main/login" />} path="/" />
           <Route element={<Main />} path="main">
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="home" element={<Home />} />
+            <Route path="browse" element={<ListEquipment />} />
           </Route>
           
           <Route element={<Admin />} path="admin">
             <Route path="pofile" element={<AdminProfile />} />
-          
+            <Route path="addequipment" element={<AddEquipment />} />
+            <Route path="manageequipment" element={<ManageEquipment />} />
+            <Route path="manageuser" element={<ManageUser />} />
+
           </Route>
           
           <Route element={<User />} path="user">

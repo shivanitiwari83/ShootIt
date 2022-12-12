@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = require('./routers/userRouter');
 const utilRouter = require('./routers/util');
+const equipmentRouter = require('./routers/equipmentRouter');
 
 const cors = require('cors');
 
@@ -15,6 +16,7 @@ app.use(cors({
 // middleware
 app.use('/user', userRouter);
 app.use('/util', utilRouter);
+app.use('/equipmentRouter', equipmentRouter);
 
 app.use(express.static('./static/uploads'))
 

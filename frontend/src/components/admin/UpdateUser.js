@@ -1,44 +1,46 @@
-import React from 'react';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
+import React from 'react'
 import Swal from 'sweetalert2';
 
-const Register = () => {
-
+const UpdateUser = ({userFormData}) => {
+  
     const userSubmit = async (formdata) => {
         console.log(formdata);
 
-        //1. url  
-        //2. request method 
-        //3. data 
-        //4. data format
-        //asynchronous function - return promise 
-        const response = await fetch('http://localhost:5000/user/add',{
-            method : 'POST',
+        // 1. url
+        // 2. request method
+        // 3. data
+        // 4. data format
+
+        // asynchronous function - returns promise
+        const response = await fetch( 'http://localhost:5000/user/update/'+formdata._id, {
+            method : 'PUT',
             body : JSON.stringify(formdata),
             headers : {
-                'Content-type' : 'application/json'
+                'Content-Type' : 'application/json'
             }
-        });
-
-        if(response.status === 200) {
+        })       
+        console.log(response.status);
+        
+        if(response.status === 200){
             console.log('user data added!');
             Swal.fire({
                 icon : 'success',
-                title : 'Well Done',
-                text : 'Registered Sucessfully',
+                title : 'Nice',
+                text : 'Updated Successfully'
             })
         }
-        console.log('request send');
 
+        console.log('request sent');
     }
     
     return (
         <div className='container'>
             <div className="card">
                 <div className="card-body">
-                    <h3 className="text-center">Register Here</h3>
+                    <h3 className="text-center">Update User Details</h3>
                     <Formik
-                        initialValues={{username: '', email: '', password: '', age: 0}}
+                        initialValues={userFormData}
                         onSubmit={userSubmit}
                     >
                         {({values, handleSubmit, handleChange}) => (
@@ -68,4 +70,4 @@ const Register = () => {
 
 }
 
-export default Register
+export default UpdateUser

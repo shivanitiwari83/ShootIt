@@ -30,46 +30,45 @@ const Header = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {/* Link */}
               <li className="nav-item">
-                <NavLink className="nav-link" to="/home">
+                <NavLink className="nav-link" to="/main/home">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/main/login">
                   Login
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
+                <NavLink className="nav-link" to="/main/signup">
                   Sign Up
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/manageAsset">
-                  Manage Assets
+                <NavLink className="nav-link" to="/manageUser">
+                  Manage User
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/userManager">
-                  User Manager
+                <NavLink className="nav-link" to="/main/resetPassword">
+                  Reset Password
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contactInfo">
+                <NavLink className="nav-link" to="/main/contactUs">
                   Contact Information
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/addForm">
-                  Add Form
+                <NavLink className="nav-link" to="/main/index">
+                  Index
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/listForm">
                   List Form
                 </NavLink>
-              </li>
-              
+              </li> */}            
             </ul>
             {/* Icons */}
             <ul className="navbar-nav d-flex flex-row me-1">
