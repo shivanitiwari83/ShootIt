@@ -43,17 +43,27 @@ const AddEquipment = () => {
                     >
                         {({values, handleSubmit, handleChange}) => (
                             <form onSubmit={handleSubmit}>
-                            <label className='mt-5'>Equipemt</label>
-                            <input className='form-control' id="equipment" onChange={handleChange} value={values.equipment} />
+                            <label className='mt-5'>Title</label>
+                            <input className='form-c ontrol' id="title" onChange={handleChange} value={values.title} />
                             
+                            <label className='mt-5'>Description</label>
+                            <input className='form-control' id="description" onChange={handleChange} value={values.description} />
+                            
+                            <label className='mt-3'>Category</label>
+                            <input className='form-control' id="category" onChange={handleChange} value={values.category} />
+
                             <label className='mt-3'>Price</label>
                             <input className='form-control' id="price" onChange={handleChange} value={values.price} />
                             
-                            <label className='mt-3'>Content</label>
-                            <input className='form-control' id="content" onChange={handleChange} value={values.content} />
+                            <label className='mt-3'>RentPrice</label>
+                            <input className='form-control' id="rentprice" onChange={handleChange} value={values.rentprice} />
+
+                            <label className='mt-3'>Image</label>
+                            <input className='form-control' id="image" onChange={handleChange} value={values.image} />
                             
-                            {/* <label className='mt-3'>Age</label>
-                            <input className='form-control' id="age" onChange={handleChange} value={values.age} /> */}
+                            <label className='mt-3'>CreatedAt</label>
+                            <input className='form-control' id="createdat" onChange={handleChange} value={values.createdat} />
+                            
     
                             <button type="submit" className='btn btn-primary mt-5'>Submit</button>
                         </form>
