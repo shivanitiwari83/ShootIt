@@ -16,7 +16,7 @@ app.use(cors({
 // middleware
 app.use('/user', userRouter);
 app.use('/util', utilRouter);
-app.use('/equipmentRouter', equipmentRouter);
+app.use('/equipment', equipmentRouter);
 
 app.use(express.static('./static/uploads'))
 

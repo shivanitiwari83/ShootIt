@@ -43,17 +43,17 @@ const AddEquipment = () => {
                     >
                         {({values, handleSubmit, handleChange}) => (
                             <form onSubmit={handleSubmit}>
-                            <label className='mt-5'>Username</label>
-                            <input className='form-control' id="username" onChange={handleChange} value={values.username} />
+                            <label className='mt-5'>Equipemt</label>
+                            <input className='form-control' id="equipment" onChange={handleChange} value={values.equipment} />
                             
-                            <label className='mt-3'>Email</label>
-                            <input className='form-control' id="email" onChange={handleChange} value={values.email} />
+                            <label className='mt-3'>Price</label>
+                            <input className='form-control' id="price" onChange={handleChange} value={values.price} />
                             
-                            <label className='mt-3'>Password</label>
-                            <input className='form-control' id="password" onChange={handleChange} value={values.password} />
+                            <label className='mt-3'>Content</label>
+                            <input className='form-control' id="content" onChange={handleChange} value={values.content} />
                             
-                            <label className='mt-3'>Age</label>
-                            <input className='form-control' id="age" onChange={handleChange} value={values.age} />
+                            {/* <label className='mt-3'>Age</label>
+                            <input className='form-control' id="age" onChange={handleChange} value={values.age} /> */}
     
                             <button type="submit" className='btn btn-primary mt-5'>Submit</button>
                         </form>
