@@ -1,10 +1,37 @@
 import React from "react";
 import { Formik } from "formik";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const loginSubmit = (formdata, { resetForm }) => {
-    console.log(formdata )
-    resetForm();
+  const loginSubmit = async (formdata, { resetForm }) => {
+    console.log(formdata);
+    const response = await fetch('http://localhost:5000/user/authenticate', {
+      method: 'POST',
+      body : JSON.stringify(formdata),
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+    })
+
+    if(response.status === 200){
+      Swal.fire({
+        icon : 'success',
+        title : 'Logedin'
+      })
+
+      const data = await response.json();
+      sessionStorage.setItem('user', JSON.stringify(data));
+      resetForm();
+
+    }else if((response.status === 401)){
+      Swal.fire({
+        icon : 'error',
+        title : 'Login Failed'
+      })
+    }else{
+      console.log('unknown error ocuured');
+    }
+    
   };
   return (
     <div className=" container ">
@@ -29,23 +56,31 @@ const Login = () => {
               <div className="col-lg-8">
                 <div className="card-body py-5 px-md-5">
                   <Formik
-                    initialValues={{ email: "", password: "" }} onSubmit={loginSubmit}>                  
-                    { ( {values, handleSubmit, handleChange , isSubmiting}) => (
+                    initialValues={{ email: "", password: "" }}
+                    onSubmit={loginSubmit}
+                  >
+                    {({ values, handleSubmit, handleChange, isSubmiting }) => (
                       <form onSubmit={handleSubmit}>
                         {/* Email input */}
                         <div className="form-outline mb-4">
-                          <input type="email" id="email" value={values.email} onChange={handleChange}
-                                  className="form-control"
+                          <input
+                            type="email"
+                            id="email"
+                            value={values.email}
+                            onChange={handleChange}
+                            className="form-control"
                           />
-                            
+
                           <label className="form-label" htmlFor="form2Example1">
                             Email address
                           </label>
                         </div>
                         <div className="form-outline mb-4">
                           <input
-                            type="password" id="password" value={values.password}  onChange={handleChange}
-                            
+                            type="password"
+                            id="password"
+                            value={values.password}
+                            onChange={handleChange}
                             className="form-control"
                           />
                           <label className="form-label" htmlFor="form2Example2">
@@ -53,7 +88,8 @@ const Login = () => {
                           </label>
                         </div>
                         <div className="row mb-4">
-                          <div className="col d-flex justify-content-center">\
+                          <div className="col d-flex justify-content-center">
+                            \
                             <div className="form-check">
                               <input
                                 className="form-check-input"
