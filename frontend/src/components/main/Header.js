@@ -60,8 +60,8 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/index">
-                  Index
+                <NavLink className="nav-link" to="/admin/addequipment">
+                  Add Equipment
                 </NavLink>
               </li>
               {/* <li className="nav-item">

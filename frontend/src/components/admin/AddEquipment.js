@@ -54,7 +54,7 @@ const AddEquipment = () => {
     <div className="container">
       <div className="card">
         <div className="card-body">
-          <h3 className="text-center">Register Here</h3>
+          <h3 className="text-center">Add New Equipment Data</h3>
           <Formik
             initialValues={{
               title: "",
@@ -91,7 +91,7 @@ const AddEquipment = () => {
                   onChange={handleChange}
                   value={values.category}
                 />
-
+                 
                 <label className="mt-3">Price</label>
                 <input
                   className="form-control"
@@ -109,9 +109,9 @@ const AddEquipment = () => {
                   value={values.rentprice}
                 />
 
-                <label className="mt-3">Image</label>
-                <input className="form-control" onChange={uploadFile} />
-
+                <label htmlFor="image" className="mt-3 btn btn-dark">Upload Image</label>
+                <input id="image" hidden onChange={uploadFile} type="file" />
+                <br></br>
                 <button type="submit" className="btn btn-primary mt-5">
                   Submit
                 </button>

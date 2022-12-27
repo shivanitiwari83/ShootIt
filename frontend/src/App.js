@@ -13,7 +13,7 @@ import Home from './components/main/Home';
 import ManageUser from './components/admin/ManageUser';
 import AddEquipment from './components/admin/AddEquipment';
 import ManageEquipment from './components/admin/ManageEquipment';
-import ListEquipment from './components/main/ListEquipment';
+import ListEquipments from './components/main/ListEquipments';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="home" element={<Home />} />
-            <Route path="browse" element={<ListEquipment />} />
+            <Route path="browse" element={<ListEquipments />} />
           </Route>
           
           <Route element={<Admin />} path="admin">
