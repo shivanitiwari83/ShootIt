@@ -1,66 +1,87 @@
-import React from 'react';
-import {Formik} from 'formik';
-import Swal from 'sweetalert2';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import UpdateUser from './UpdateUser';
 
 const ManageEquipment = () => {
 
-    const userSubmit = async (formdata) => {
-        console.log(formdata);
+    const [equipmentList, setEquipmentList] = useState([]);
 
-        const response = await fetch('http://localhost:5000/user/add',{
-            method : 'POST',
-            body : JSON.stringify(formdata),
-            headers : {
-                'Content-type' : 'application/json'
-            }
-        });
+    const getDataFromBackend = async () => {
 
-        if(response.status === 200) {
-            console.log('user data added!');
-            Swal.fire({
-                icon : 'success',
-                title : 'Well Done',
-                text : 'Registered Sucessfully',
-            })
-        }
-        console.log('request send');
+        // default request method : GET
+        const response = await fetch('http://localhost:5000/equipment/getall');
+        const data = await response.json();
+        console.log(data);
+        // store data in state
+        setEquipmentList(data);
+        console.log('request sent');
+    }
+
+    useEffect(() => {
+        getDataFromBackend();
+    }, [])
+
+    const deleteUser = async (id) => {
+        // console.log(id);
+        const response = await fetch('http://localhost:5000/equipment/delete/' + id, {
+            method: 'DELETE'
+        })
+        console.log(response.status);
+        getDataFromBackend();
+        // import toast from 'react-hot-toast';
+        toast.success('User Deleted 😁');
+    }
+
+
+    const showUsers = () => {
+
+        return <table className='table table-white table-striped'>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Rent Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    equipmentList.map((equipment) => (
+                        <motion.tr
+                            key={equipment._id}
+                            initial={{ scale: 0.7, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.7, opacity: 0 }}
+                            transition={{ type: "spring" }}>
+
+                            <td>{equipment.title}</td>
+                            <td>{equipment.category}</td>
+                            <td>{equipment.price}</td>
+                            <td>{equipment.rentPrice}</td>
+
+                            <td>
+                                <button className='btn btn-outline-danger' onClick={() => { deleteUser(equipment._id) }}>
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </motion.tr>
+                    ))
+                }
+            </tbody>
+        </table>
 
     }
-    
-    return (
-        <div className='container'>
-            <div className="card">
-                <div className="card-body">
-                    <h3 className="text-center">Register Here</h3>
-                    <Formik
-                        initialValues={{title: '', description: '', category: '', price: 0, rentPrice: 0, image: '', createdAt: new Date()}}
-                        onSubmit={userSubmit}
-                    >
-                        {({values, handleSubmit, handleChange}) => (
-                            <form onSubmit={handleSubmit}>
-                            <label className='mt-5'>Username</label>
-                            <input className='form-control' id="username" onChange={handleChange} value={values.username} />
-                            
-                            <label className='mt-3'>Email</label>
-                            <input className='form-control' id="email" onChange={handleChange} value={values.email} />
-                            
-                            <label className='mt-3'>Password</label>
-                            <input className='form-control' id="password" onChange={handleChange} value={values.password} />
-                            
-                            <label className='mt-3'>Age</label>
-                            <input className='form-control' id="age" onChange={handleChange} value={values.age} />
-    
-                            <button type="submit" className='btn btn-primary mt-5'>Submit</button>
-    
-                        </form>
-                        )}
-                    </Formik>
-                    
-                </div>
-            </div>
-        </div>
-    )
 
+    return (
+        <AnimatePresence className='container'>
+            <h1 className="text-center">User Manager</h1>
+            <button onClick={getDataFromBackend}>Refresh</button>
+            {showUsers()}
+
+        </AnimatePresence>
+    )
 }
 
 export default ManageEquipment;

@@ -28,11 +28,8 @@ router.get('/getall', (req, res) => {
         });
 })
 
-router.get('/getbyusername/:username', (req, res) => {
-    console.log(req.params.username);
-    //res.send('nice');     
-    //res.send(req.params.username);
-    Model.find({ username: req.params.username })
+router.get('/getbyid/:id', (req, res) => {
+    Model.findById(req.params.id)
         .then((result) => {
             console.log(result);
             res.json(result);

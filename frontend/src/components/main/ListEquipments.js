@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import app_config from "../../config";
 
 const ListEquipments = () => {
@@ -28,6 +29,7 @@ const ListEquipments = () => {
               <div className="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                 <div className="bg-image hover-zoom ripple rounded ripple-surface">
                   <img
+                    // style={{height: '400px'}}
                     src={url+'/'+equipment.image}
                     className="w-100"
                     alt=""
@@ -83,9 +85,9 @@ const ListEquipments = () => {
                 </div>
                 <h6 className="text-success">Free shipping</h6>
                 <div className="d-flex flex-column mt-4">
-                  <button className="btn btn-primary btn-sm" type="button">
+                  <Link className="btn btn-primary btn-sm" to={'/main/details/'+equipment._id}>
                     Details
-                  </button>
+                  </Link>
                   <button
                     className="btn btn-outline-primary btn-sm mt-2"
                     type="button"

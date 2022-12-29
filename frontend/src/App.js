@@ -14,6 +14,7 @@ import ManageUser from './components/admin/ManageUser';
 import AddEquipment from './components/admin/AddEquipment';
 import ManageEquipment from './components/admin/ManageEquipment';
 import ListEquipments from './components/main/ListEquipments';
+import EquipmentDetails from './components/main/EquipmentDetails';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="home" element={<Home />} />
             <Route path="browse" element={<ListEquipments />} />
+            <Route path="details/:id" element={<EquipmentDetails />} />
           </Route>
           
           <Route element={<Admin />} path="admin">
