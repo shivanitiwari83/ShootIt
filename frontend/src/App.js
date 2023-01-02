@@ -15,6 +15,8 @@ import AddEquipment from './components/admin/AddEquipment';
 import ManageEquipment from './components/admin/ManageEquipment';
 import ListEquipments from './components/main/ListEquipments';
 import EquipmentDetails from './components/main/EquipmentDetails';
+import Checkout from './components/main/Checkout';
+import UserAuth from './UserAuth';
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
             <Route path="browse" element={<ListEquipments />} />
             <Route path="details/:id" element={<EquipmentDetails />} />
           </Route>
-          
+
           <Route element={<Admin />} path="admin">
             <Route path="pofile" element={<AdminProfile />} />
             <Route path="addequipment" element={<AddEquipment />} />
@@ -38,13 +40,18 @@ function App() {
             <Route path="manageuser" element={<ManageUser />} />
 
           </Route>
-          
-          <Route element={<User />} path="user">
+
+          <Route element={
+            <UserAuth>
+              <User />
+            </UserAuth>
+          } path="user">
             <Route path="pofile" element={<UserProfile />} />
-          
+            <Route path="checkout" element={<Checkout />} />
+
           </Route>
 
-          
+
 
         </Routes>
       </BrowserRouter>

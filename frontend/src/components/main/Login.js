@@ -1,8 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const loginSubmit = async (formdata, { resetForm }) => {
     console.log(formdata);
     const response = await fetch('http://localhost:5000/user/authenticate', {
@@ -21,6 +23,7 @@ const Login = () => {
 
       const data = await response.json();
       sessionStorage.setItem('user', JSON.stringify(data));
+      navigate('/main/browse');
       resetForm();
 
     }else if((response.status === 401)){
