@@ -20,6 +20,7 @@ app.use(cors({
 app.use('/user', userRouter);
 app.use('/util', utilRouter);
 app.use('/equipment', equipmentRouter);
+app.use('/order', orderRouter);
 
 app.use(express.static('./static/uploads'))
 
