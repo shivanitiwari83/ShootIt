@@ -27,7 +27,7 @@ const EquipmentDetails = () => {
     const displayData = () => {
       if(!loading & equipmentData){
         return <div className='container'>
-
+          
         </div>
       }
     }
