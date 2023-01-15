@@ -8,6 +8,8 @@ const myschema = new Schema({
     email : String,
     password : String,
     age : Number,
+    isAdmin: {type : Boolean, default:false },
+    avatar : String
 });
 
 //here we are creating model 

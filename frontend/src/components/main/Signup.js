@@ -1,8 +1,11 @@
 import React from 'react';
 import {Formik} from 'formik';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const userSubmit = async (formdata) => {
         console.log(formdata);
@@ -27,6 +30,7 @@ const Register = () => {
                 title : 'Well Done',
                 text : 'Registered Sucessfully',
             })
+            navigate('/main/login');
         }
         console.log('request send');
 
@@ -50,7 +54,7 @@ const Register = () => {
                             <input className='form-control' id="email" onChange={handleChange} value={values.email} />
                             
                             <label className='mt-3'>Password</label>
-                            <input className='form-control' id="password" onChange={handleChange} value={values.password} />
+                            <input className='form-control' type="password" id="password" onChange={handleChange} value={values.password} />
                             
                             <label className='mt-3'>Age</label>
                             <input className='form-control' id="age" onChange={handleChange} value={values.age} />
