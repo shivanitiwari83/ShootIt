@@ -2,6 +2,7 @@ const express = require('express');
 const userRouter = require('./routers/userRouter');
 const utilRouter = require('./routers/util');
 const equipmentRouter = require('./routers/equipmentRouter');
+const orderRouter = require('./routers/orderRouter');
 const stripe_sk =
   "sk_test_51MJCFESFzM9nsxSsqqlx3P1nYPbvhbzfnEWOhOlzxwONXSeWcCJ5V2cFJ1D4w0YLPhqu9UcSaCetp9Gv6rBOsE9x00Aenxvr5T";
 const stripe = require("stripe")(stripe_sk);

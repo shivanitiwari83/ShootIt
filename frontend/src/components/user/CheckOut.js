@@ -11,7 +11,7 @@ const CheckOut = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
-  const url = app_config.apiurl;
+  const url = app_config.api_url;
 
   const [isPaymentLoading, setPaymentLoading] = useState(false);
 
@@ -48,7 +48,7 @@ const CheckOut = () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: equipmentData.sellPrice * 100 }),
+      body: JSON.stringify({ amount: equipmentData.price * 100 }),
     };
     return fetch(url + "/create-payment-intent", requestOptions).then(
       (response) => response.json()
@@ -165,7 +165,7 @@ const CheckOut = () => {
                     <label>
                       <b>Novel SellPrice</b>
                     </label>
-                    <h3 className="mb-3">{equipmentData.sellPrice}</h3>
+                    <h3 className="mb-3">{equipmentData.price}</h3>
                   </div>
                   <div className="col-md-6">
                     {/* img */}
@@ -196,7 +196,7 @@ const CheckOut = () => {
                   >
                     {isPaymentLoading
                       ? "Loading..."
-                      : `Pay ₹${equipmentData.sellPrice}/-`}
+                      : `Pay ₹${equipmentData.price}/-`}
                   </button>
                 </form>
               </div>

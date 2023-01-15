@@ -18,8 +18,15 @@ import EquipmentDetails from "./components/main/EquipmentDetails";
 import AdminAuth from "./AdminAuth";
 import UserAuth from "./UserAuth";
 import ManageOrders from "./components/user/ManageOrders";
+import CheckOut from "./components/user/CheckOut";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  const stripe = loadStripe(
+    "pk_test_51MJCFESFzM9nsxSsupwtB39lFhJbHf7fPlbVVnyPezOli9SUNVnuDm5ixKKhGg5On2nfz3udpKaplEMd0D9canPU00aq5Zv6UH"
+  );
+
   return (
     <div>
       <BrowserRouter>
@@ -56,6 +63,14 @@ function App() {
             path="user"
           >
             <Route path="profile" element={<UserProfile />} />
+            <Route
+              path="checkout"
+              element={
+                <Elements stripe={stripe}>
+                  <CheckOut />
+                </Elements>
+              }
+            />
             <Route path="manageorder" element={<ManageOrders />} />
           </Route>
         </Routes>

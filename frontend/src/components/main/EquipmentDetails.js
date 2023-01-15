@@ -26,7 +26,7 @@ const EquipmentDetails = () => {
   }, [])
 
   const checkout = () => {
-    sessionStorage.setItem('product', JSON.stringify(equipmentData));
+    sessionStorage.setItem('equipment', JSON.stringify(equipmentData));
     navigate('/user/checkout')
   }
 
