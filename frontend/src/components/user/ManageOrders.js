@@ -46,7 +46,7 @@ const ManageOrders = () => {
   const getDataFromBackend = async () => {
     // send request
     const res = await fetch(url + "/order/getbyuser/" + currentUser._id);
-
+    console.log(res.status);
     // accessing data from response
     const data = await res.json();
 

@@ -28,8 +28,8 @@ router.get('/getall', (req, res) => {
         });
 })
 
-router.get('/getbyid/:id', (req, res) => {
-    Model.findById(req.params.id)
+router.get('/getbyuser/:id', (req, res) => {
+    Model.find({user : req.params.id}).populate('user').populate('equipment')
         .then((result) => {
             console.log(result);
             res.json(result);
