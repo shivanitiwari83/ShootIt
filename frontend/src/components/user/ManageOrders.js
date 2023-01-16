@@ -3,7 +3,7 @@ import app_config from "../../config";
 
 const ShowOrder = ({ formdata }) => {
 
-  const url = app_config.apiurl;
+  const url = app_config.api_url;
 
 
   return (
@@ -13,14 +13,14 @@ const ShowOrder = ({ formdata }) => {
         <hr />
         {/* image */}
         <img  className="img-fluid w-100"
-            src={url + "/" + formdata.novel.image} alt="" />
+            src={url + "/" + formdata.equipment.image} alt="" />
             
         <p className="fw-bold m-0">Title</p>
-        <h4>{formdata.novel.title}</h4>
+        <h4>{formdata.equipment.title}</h4>
         <p className="fw-bold m-0">Author</p>
-        <h4>{formdata.novel.author}</h4>
+        <h4>{formdata.equipment.author}</h4>
         <p className="fw-bold m-0">Publisher</p>
-        <h4>{formdata.novel.publisher}</h4>
+        <h4>{formdata.equipment.publisher}</h4>
 
         <h3 className="mt-3">User Details</h3>
         <hr />
@@ -41,7 +41,7 @@ const ManageOrders = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
-  const url = app_config.apiurl;
+  const url = app_config.api_url;
 
   const getDataFromBackend = async () => {
     // send request
@@ -88,8 +88,8 @@ const ManageOrders = () => {
               <tbody>
                 {orderList.map((order) => (
                   <tr>
-                    <td>{order.novel.title}</td>
-                    <td>{order.novel.author}</td>
+                    <td>{order.equipment.title}</td>
+                    <td>{order.equipment.author}</td>
                     <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                     <td>
                       <button

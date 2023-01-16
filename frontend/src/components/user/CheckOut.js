@@ -99,15 +99,17 @@ const CheckOut = () => {
       method: "POST",
       body: JSON.stringify({
         user: currentUser._id,
-        novel: equipmentData._id,
+        equipment: equipmentData._id,
         createdAt: new Date(),
         type: "purchase",
       }),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => {
+    }).then( async (res) => {
       console.log(res.status);
+      console.log(await res.json());
+
       if (res.status === 200) {
         Swal.fire({
           icon: "success",

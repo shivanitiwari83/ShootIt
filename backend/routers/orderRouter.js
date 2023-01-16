@@ -26,7 +26,7 @@ router.get('/getall', (req, res) => {
             console.log(err);
             res.json(err);
         });
-})
+});
 
 router.get('/getbyuser/:id', (req, res) => {
     Model.find({user : req.params.id}).populate('user').populate('equipment')
