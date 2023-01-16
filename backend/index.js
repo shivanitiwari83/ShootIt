@@ -4,7 +4,7 @@ const utilRouter = require('./routers/util');
 const equipmentRouter = require('./routers/equipmentRouter');
 const orderRouter = require('./routers/orderRouter');
 const stripe_sk =
-  "sk_test_51MJCFESFzM9nsxSsqqlx3P1nYPbvhbzfnEWOhOlzxwONXSeWcCJ5V2cFJ1D4w0YLPhqu9UcSaCetp9Gv6rBOsE9x00Aenxvr5T";
+  "sk_test_51MLjhBSEMMAeLJi0Wk9cLkRCL3ZuccWlJ9GKOPFDtkZgUHqaZ3gjMqjJzeSjw0TTUAGo5gPAAg29ByiHQeOayFuO00r0UFPbfU";
 const stripe = require("stripe")(stripe_sk);
 
 const cors = require('cors');

@@ -24,7 +24,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
   const stripe = loadStripe(
-    "pk_test_51MJCFESFzM9nsxSsupwtB39lFhJbHf7fPlbVVnyPezOli9SUNVnuDm5ixKKhGg5On2nfz3udpKaplEMd0D9canPU00aq5Zv6UH"
+    "pk_test_51MLjhBSEMMAeLJi0Ao1Lp5rVmgdKqvCUwOR21jotcHI2clNCcMp9HKVQ7OOm7Mctx1RqoZmXTNvTTUq9HAOnJjGA004q0jPzSs"
   );
 
   return (
