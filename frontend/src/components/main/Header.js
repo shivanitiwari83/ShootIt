@@ -1,106 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const [loggedin, setLoggedin] = useState(false);
-
   return (
-    <>
-      {/* Navbar */}
-      <nav
-        className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: "#232a69" }}
-      >
-        {/* Container wrapper */}
-        <div>
-          {/* Toggle button */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <nav className="navbar navbar-expand-lg navbar-light bg-light accent-border">
+      <div className="container justify-content-between">
+        {/* Left elements */}
+        <div className="d-flex">
+          {/* Brand */}
+          <a
+            className="navbar-brand me-2 mb-1 d-flex align-items-center"
+            href="#"
           >
-            <i className="fas fa-bars" />
-          </button>
-          {/* Collapsible wrapper     */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {/* Link */}
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/home">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/login">
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/signup">
-                  Sign Up
-                </NavLink>
-              </li>
-              
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/contactUs">
-                  Contact Us
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/browse">
-                  Browse Equipment
-                </NavLink>
-              </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/listForm">
-                  List Form
-                </NavLink>
-              </li> */}            
-            </ul>
-            {/* Icons */}
-            <ul className="navbar-nav d-flex flex-row me-1">
-              <li className="nav-item me-3 me-lg-0">
-                {loggedin ? (
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => {
-                      setLoggedin(false);
-                    }}
-                  >
-                    <i className="fas fa-sign-out-alt"></i>Logout
-                  </button>
-                ) : (
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => {
-                      setLoggedin(true);
-                    }}
-                  >
-                    <i className="fas fa-sign-in"></i> Login
-                  </button>
-                )}
-              </li>
-            </ul>
-            {/* Search */}
-            <form className="w-auto">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="Type query"
-                aria-label="Search"
-              />
-            </form>
-          </div>
+            <img
+              src="logo.png"
+              height={30}
+              alt="Shoot It"
+              loading="lazy"
+              style={{ marginTop: 2 }}
+            />
+          </a>
+          <p className="h3 mt-1">SHOOT IT</p>
         </div>
-      </nav>
-    </>
+        <ul className="navbar-nav flex-row d-none d-md-flex">
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/home" data-mdb-toggle="tooltip" title="Home Page">
+              <i className="fas fa-home fa-lg" />
+            </NavLink>
+          </li>
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/login" data-mdb-toggle="tooltip" title="Login Page">
+              <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>
+            </NavLink>
+          </li>
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/browse" data-mdb-toggle="tooltip" title="Browse Equipments">
+              <i class="fas fa-shopping-bag fa-lg "></i>
+            </NavLink>
+          </li>
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/contact" data-mdb-toggle="tooltip" title="Contact Us">
+                <i class="fas fa-phone fa-lg fa-fw"></i>
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
-
-
 
 export default Header;

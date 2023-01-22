@@ -1,115 +1,212 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 
 const Header = () => {
-  const [loggedin, setLoggedin] = useState(false);
-
   return (
-    <>
-      {/* Navbar */}
-      <nav
-        className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: "#232a69" }}
-      >
-        {/* Container wrapper */}
-        <div>
-          {/* Toggle button */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid justify-content-between">
+        {/* Left elements */}
+        <div className="d-flex">
+          {/* Brand */}
+          <a
+            className="navbar-brand me-2 mb-1 d-flex align-items-center"
+            href="#"
           >
-            <i className="fas fa-bars" />
-          </button>
-          {/* Collapsible wrapper     */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {/* Link */}
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/home">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/login">
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/signup">
-                  Sign Up
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/manageUser">
-                  Manage User
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/resetPassword">
-                  Reset Password
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/contactUs">
-                  Contact Information
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/addequipment">
-                  Add Equipment
-                </NavLink>
-              </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/listForm">
-                  List Form
-                </NavLink>
-              </li> */}            
-            </ul>
-            {/* Icons */}
-            <ul className="navbar-nav d-flex flex-row me-1">
-              <li className="nav-item me-3 me-lg-0">
-                {loggedin ? (
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => {
-                      setLoggedin(false);
-                    }}
-                  >
-                    <i className="fas fa-sign-out-alt"></i>Logout
-                  </button>
-                ) : (
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => {
-                      setLoggedin(true);
-                    }}
-                  >
-                    <i className="fas fa-sign-in"></i> Login
-                  </button>
-                )}
-              </li>
-            </ul>
-            {/* Search */}
-            <form className="w-auto">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="Type query"
-                aria-label="Search"
-              />
-            </form>
-          </div>
+            <img
+              src="logo.png"
+              height={30}
+              alt="Shoot It"
+              loading="lazy"
+              style={{ marginTop: 2 }}
+            />
+          </a>
+          {/* Search form */}
+          <form className="input-group w-auto my-auto d-none d-sm-flex">
+            <input
+              autoComplete="off"
+              type="search"
+              className="form-control rounded"
+              placeholder="Search"
+              style={{ minWidth: 125 }}
+            />
+            <span className="input-group-text border-0 d-none d-lg-flex">
+              <i className="fas fa-search" />
+            </span>
+          </form>
         </div>
-      </nav>
-    </>
+        {/* Left elements */}
+        {/* Center elements */}
+        <ul className="navbar-nav flex-row d-none d-md-flex">
+          <li className="nav-item me-3 me-lg-1 active">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-home fa-lg" />
+              </span>
+              <span className="badge rounded-pill badge-notification bg-danger">
+                1
+              </span>
+            </a>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-flag fa-lg" />
+              </span>
+            </a>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-video fa-lg" />
+              </span>
+            </a>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-shopping-bag fa-lg" />
+              </span>
+            </a>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-users fa-lg" />
+              </span>
+              <span className="badge rounded-pill badge-notification bg-danger">
+                2
+              </span>
+            </a>
+          </li>
+        </ul>
+        {/* Center elements */}
+        {/* Right elements */}
+        <ul className="navbar-nav flex-row">
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link d-sm-flex align-items-sm-center" href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                className="rounded-circle"
+                height={22}
+                alt="Black and White Portrait of a Man"
+                loading="lazy"
+              />
+              <strong className="d-none d-sm-block ms-1">John</strong>
+            </a>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <a className="nav-link" href="#">
+              <span>
+                <i className="fas fa-plus-circle fa-lg" />
+              </span>
+            </a>
+          </li>
+          <li className="nav-item dropdown me-3 me-lg-1">
+            <a
+              className="nav-link dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fas fa-comments fa-lg" />
+              <span className="badge rounded-pill badge-notification bg-danger">
+                6
+              </span>
+            </a>
+            <ul
+              className="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a className="dropdown-item" href="#">
+                  Some news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item dropdown me-3 me-lg-1">
+            <a
+              className="nav-link dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fas fa-bell fa-lg" />
+              <span className="badge rounded-pill badge-notification bg-danger">
+                12
+              </span>
+            </a>
+            <ul
+              className="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a className="dropdown-item" href="#">
+                  Some news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li className="nav-item dropdown me-3 me-lg-1">
+            <a
+              className="nav-link dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fas fa-chevron-circle-down fa-lg" />
+            </a>
+            <ul
+              className="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a className="dropdown-item" href="#">
+                  Some news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another news
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {/* Right elements */}
+      </div>
+    </nav>
   );
 };
-
-
 
 export default Header;

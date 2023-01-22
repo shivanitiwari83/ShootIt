@@ -21,14 +21,20 @@ import ManageOrders from "./components/user/ManageOrders";
 import CheckOut from "./components/user/CheckOut";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { useRef, useState } from "react";
 
 function App() {
   const stripe = loadStripe(
     "pk_test_51MLjhBSEMMAeLJi0Ao1Lp5rVmgdKqvCUwOR21jotcHI2clNCcMp9HKVQ7OOm7Mctx1RqoZmXTNvTTUq9HAOnJjGA004q0jPzSs"
   );
 
+  const [mainClass, setMainClass] = useState("");
+  const [searchClass, setSearchClass] = useState("");
+  const [focused, setFocused] = useState(false);
   return (
     <div>
+      <main className={'main-wrap bg-white '+mainClass}>
+
       <BrowserRouter>
         <Routes>
           <Route element={<Navigate to="/main/login" />} path="/" />
@@ -36,7 +42,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="home" element={<Home />} />
-            <Route path="browse" element={<ListEquipments />} />
+            <Route path="browse" element={<ListEquipments setFocused={setFocused} mainClass={mainClass} setMainClass={setMainClass} setSearchClass={setSearchClass} />} />
             <Route path="details/:id" element={<EquipmentDetails />} />
           </Route>
 
@@ -75,6 +81,40 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </main>
+      <div class={"search " + searchClass}>
+        <button
+          class="btn--search-close"
+          aria-label="Close search form"
+          onClick={(e) => {setSearchClass("")
+        setMainClass("")}}
+        >
+          <svg class="icon icon--cross">
+            <use xlinkHref="#icon-cross"></use>
+          </svg>
+        </button>
+        <form class="search__form" action="">
+          <input
+            class="search__input"
+            name="search"
+            type="search"
+            placeholder="Search"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            // ref={searchRef}
+            autoFocus={focused}
+            onKeyUp={e => {
+              if( e.key === 'Escape' ) {
+                setSearchClass('');
+                setMainClass('');
+              }
+            }}
+          />
+          <span class="search__info">Hit enter to search or ESC to close</span>
+        </form>
+      </div>
     </div>
   );
 }
