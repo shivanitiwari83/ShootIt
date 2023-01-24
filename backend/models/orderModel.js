@@ -8,7 +8,8 @@ const myschema = new Schema({
     user :{type : Types.ObjectId, ref : 'users' },
     createdAt : Date,
     paymentInfo : Object,
-    address: String
+    address: String,
+    type: String,
 });
 
 //here we are creating model 

@@ -42,7 +42,15 @@ const EquipmentDetails = () => {
             <div className="card">
               <div className="card-body">
                 <p className="display-4">{equipmentData.title}</p>
-                <button className='btn btn-outline-primary btn-lg' onClick={checkout} >Buy Now</button>
+                <p className="mt-4 fw-bold text-primary">{equipmentData.category}</p>
+                <p className="fw-900 mt-3">{equipmentData.description}</p>
+                
+                <p className="fw-900 h4 mt-3">Price</p>
+                <p className="display-3 mt-3 fw-bold">{equipmentData.price}</p>
+                <p className="fw-900 h4 mt-3">Rent Price</p>
+                <p className="display-3 mt-3 fw-bold">{equipmentData.rentPrice}</p>
+                <button className='btn btn-outline-primary btn-lg me-5' onClick={checkout} >Buy Now</button>
+                <button className='btn btn-outline-danger btn-lg' onClick={checkout} >Rent</button>
               </div>
             </div>
           </div>

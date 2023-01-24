@@ -1,10 +1,9 @@
+import { MDBBadge } from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
 
 const ShowOrder = ({ formdata }) => {
-
   const url = app_config.api_url;
-
 
   return (
     <div className="card">
@@ -12,23 +11,25 @@ const ShowOrder = ({ formdata }) => {
         <h3>Novel Details</h3>
         <hr />
         {/* image */}
-        <img  className="img-fluid w-100"
-            src={url + "/" + formdata.equipment.image} alt="" />
-            
-        <p className="fw-bold m-0">Title</p>
+        <img
+          className="img-fluid w-100"
+          src={url + "/" + formdata.equipment.image}
+          alt=""
+        />
+
+        <p className="fw-bold m-0">Equipment</p>
         <h4>{formdata.equipment.title}</h4>
         <p className="fw-bold m-0">Author</p>
-        <h4>{formdata.equipment.author}</h4>
-        <p className="fw-bold m-0">Publisher</p>
-        <h4>{formdata.equipment.publisher}</h4>
+        <h4>{formdata.equipment.category}</h4>
+        <p className="fw-bold m-0">Order ID</p>
+        <h4>{formdata._id}</h4>
 
-        <h3 className="mt-3">User Details</h3>
+        <h3 className="mt-5">User Details</h3>
         <hr />
         <p className="fw-bold m-0">Username</p>
         <h4>{formdata.user.username}</h4>
         <h4>{formdata.user.email}</h4>
         <h4>{formdata.user._id}</h4>
-
       </div>
     </div>
   );
@@ -79,7 +80,7 @@ const ManageOrders = () => {
             <table className="table table-dark">
               <thead>
                 <tr>
-                  <th>Novel Title</th>
+                  <th>Equipment</th>
                   <th>Novel Author</th>
                   <th>Purchased/Rented on</th>
                   <th></th>
@@ -89,7 +90,17 @@ const ManageOrders = () => {
                 {orderList.map((order) => (
                   <tr>
                     <td>{order.equipment.title}</td>
-                    <td>{order.equipment.author}</td>
+                    <td>
+                      {order.type === "purchase" ? (
+                        <MDBBadge color="primary" pill>
+                          Purchase
+                        </MDBBadge>
+                      ) : (
+                        <MDBBadge color="danger" pill>
+                          Rent
+                        </MDBBadge>
+                      )}
+                    </td>
                     <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                     <td>
                       <button

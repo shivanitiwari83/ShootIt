@@ -4,7 +4,7 @@ import Header from './Header'
 
 const User = () => {
   return (
-    <div>
+    <div className='base'>
       <Header/>
       <Outlet />
     </div>

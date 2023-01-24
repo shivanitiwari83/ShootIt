@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -37,14 +38,12 @@ const Header = () => {
         {/* Center elements */}
         <ul className="navbar-nav flex-row d-none d-md-flex">
           <li className="nav-item me-3 me-lg-1 active">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="/main/home">
               <span>
                 <i className="fas fa-home fa-lg" />
               </span>
-              <span className="badge rounded-pill badge-notification bg-danger">
-                1
-              </span>
-            </a>
+              
+            </NavLink>
           </li>
           <li className="nav-item me-3 me-lg-1">
             <a className="nav-link" href="#">
