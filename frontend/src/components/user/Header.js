@@ -2,6 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+
+  
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid justify-content-between">
@@ -60,7 +63,7 @@ const Header = () => {
             </a>
           </li>
           <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" href="#">
               <span>
                 <i className="fas fa-shopping-bag fa-lg" />
               </span>
@@ -92,115 +95,7 @@ const Header = () => {
               <strong className="d-none d-sm-block ms-1">John</strong>
             </a>
           </li>
-          <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
-              <span>
-                <i className="fas fa-plus-circle fa-lg" />
-              </span>
-            </a>
-          </li>
-          <li className="nav-item dropdown me-3 me-lg-1">
-            <a
-              className="nav-link dropdown-toggle hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i className="fas fa-comments fa-lg" />
-              <span className="badge rounded-pill badge-notification bg-danger">
-                6
-              </span>
-            </a>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a className="dropdown-item" href="#">
-                  Some news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown me-3 me-lg-1">
-            <a
-              className="nav-link dropdown-toggle hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i className="fas fa-bell fa-lg" />
-              <span className="badge rounded-pill badge-notification bg-danger">
-                12
-              </span>
-            </a>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a className="dropdown-item" href="#">
-                  Some news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown me-3 me-lg-1">
-            <a
-              className="nav-link dropdown-toggle hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i className="fas fa-chevron-circle-down fa-lg" />
-            </a>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a className="dropdown-item" href="#">
-                  Some news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another news
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </li>
+          
         </ul>
         {/* Right elements */}
       </div>
