@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid justify-content-between">
+      <div className="container justify-content-between">
         {/* Left elements */}
         <div className="d-flex">
           {/* Brand */}
@@ -22,9 +22,43 @@ const Header = () => {
               loading="lazy"
               style={{ marginTop: 2 }}
             />
+            Shoot It
           </a>
           {/* Search form */}
-          <form className="input-group w-auto my-auto d-none d-sm-flex">
+          
+        </div>
+        {/* Left elements */}
+        {/* Center elements */}
+        <ul className="navbar-nav flex-row d-none d-md-flex">
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/home">
+              <span>
+                <i className="fas fa-home fa-lg" />
+              </span>             
+            </NavLink>
+          </li>
+          
+          
+          <li className="nav-item me-3 me-lg-1">
+            <NavLink className="nav-link" to="/main/browse">
+              <span>
+                <i className="fas fa-shopping-bag fa-lg" />
+              </span>
+            </NavLink>
+          </li>
+          <li className="nav-item me-3 me-lg-1">
+            <NavLink className="nav-link" to="/main/contactus">
+              <span>
+                <i className="fas fa-users fa-lg" />
+              </span>
+             
+            </NavLink>
+          </li>
+        </ul>
+        {/* Center elements */}
+        {/* Right elements */}
+        <ul className="navbar-nav flex-row">
+        <form className="input-group w-auto mx-auto my-auto d-none d-sm-flex">
             <input
               autoComplete="off"
               type="search"
@@ -36,53 +70,6 @@ const Header = () => {
               <i className="fas fa-search" />
             </span>
           </form>
-        </div>
-        {/* Left elements */}
-        {/* Center elements */}
-        <ul className="navbar-nav flex-row d-none d-md-flex">
-          <li className="nav-item me-3 me-lg-1 active">
-            <NavLink className="nav-link" to="/main/home">
-              <span>
-                <i className="fas fa-home fa-lg" />
-              </span>
-              
-            </NavLink>
-          </li>
-          <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
-              <span>
-                <i className="fas fa-flag fa-lg" />
-              </span>
-            </a>
-          </li>
-          <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
-              <span>
-                <i className="fas fa-video fa-lg" />
-              </span>
-            </a>
-          </li>
-          <li className="nav-item me-3 me-lg-1">
-            <NavLink className="nav-link" href="#">
-              <span>
-                <i className="fas fa-shopping-bag fa-lg" />
-              </span>
-            </a>
-          </li>
-          <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
-              <span>
-                <i className="fas fa-users fa-lg" />
-              </span>
-              <span className="badge rounded-pill badge-notification bg-danger">
-                2
-              </span>
-            </a>
-          </li>
-        </ul>
-        {/* Center elements */}
-        {/* Right elements */}
-        <ul className="navbar-nav flex-row">
           <li className="nav-item me-3 me-lg-1">
             <a className="nav-link d-sm-flex align-items-sm-center" href="#">
               <img
