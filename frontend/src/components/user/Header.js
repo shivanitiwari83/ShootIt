@@ -41,8 +41,7 @@ const Header = () => {
             <NavLink className="nav-link" to="/main/home">
               <span>
                 <i className="fas fa-home fa-lg" />
-              </span>
-              
+              </span>             
             </NavLink>
           </li>
           <li className="nav-item me-3 me-lg-1">
@@ -60,21 +59,21 @@ const Header = () => {
             </a>
           </li>
           <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="/main/browse">
               <span>
                 <i className="fas fa-shopping-bag fa-lg" />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item me-3 me-lg-1">
-            <a className="nav-link" href="#">
+            <NavLink className="nav-link" to="main/contact">
               <span>
                 <i className="fas fa-users fa-lg" />
               </span>
               <span className="badge rounded-pill badge-notification bg-danger">
                 2
               </span>
-            </a>
+            </NavLink>
           </li>
         </ul>
         {/* Center elements */}
