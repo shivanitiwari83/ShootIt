@@ -36,6 +36,10 @@ app.post("/create-payment-intent", async (req, res) => {
   res.status(200).json(paymentIntent);
 });
 
+app.get('/', (req, res) => {
+  res.send('backend working');
+})
+
 //starting the server
 app.listen(port, () => {
   console.log(" express server started...");
