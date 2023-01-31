@@ -64,7 +64,7 @@ const Home = () => {
                   </div>
                   <div className="col-lg-6 mb-5 mb-lg-0">
                     <img
-                      src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+                      src="https://www.thefilmfund.co/wp-content/uploads/2021/01/film-equipment-.jpg"
                       className="w-100 rounded-4 shadow-4"
                       alt=""
                       aria-controls="#picker-editor"
@@ -97,7 +97,7 @@ const Home = () => {
                     className="bg-image rounded-5 shadow-5-strong"
                     style={{
                       backgroundImage:
-                        'url("https://mdbootstrap.com/img/new/textures/full/98.jpg")',
+                        'url("https://img.freepik.com/premium-photo/studio-light-equipments-photo-film-movie-video-light-set-professional-shooting-studio_258335-982.jpg")',
                       height: 560,
                       backgroundSize: "cover",
                       backgroundPosition: "50% 50%",
@@ -113,17 +113,14 @@ const Home = () => {
                         <div className="px-4 py-5 px-md-5 text-white text-center">
                           <h3 className="text-uppercase fw-bold mb-4">
                             <span>The future is</span>
-                            <u style={{ color: "hsl(210, 12%, 80%)" }}>now</u>
+                            <u style={{ color: "hsl(210, 12%, 80%)" }}> now </u>
                           </h3>
                           <p
                             className="mb-0"
                             style={{ color: "hsl(210, 12%, 80%)" }}
                           >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Harum quia laboriosam error consequuntur
-                            fugit, doloribus rerum, iure nesciunt amet quidem
-                            veniam cupiditate hic fugiat dolore aperiam quisquam
-                            libero earum quibusdam?
+                            Cinema, which is used to educate people, as 
+                            well as to entertain, influence and direct them
                           </p>
                         </div>
                       </div>
@@ -146,10 +143,7 @@ const Home = () => {
                     <div className="flex-grow-1 ms-4">
                       <p className="fw-bold mb-1">Support 24/7</p>
                       <p className="text-muted mb-0">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Nihil quisquam quibusdam modi sapiente magni
-                        molestias pariatur facilis reprehenderit facere aliquam
-                        ex.
+                      To Provide expensive shooting Equipments on rent .
                       </p>
                     </div>
                   </div>
@@ -168,9 +162,7 @@ const Home = () => {
                     <div className="flex-grow-1 ms-4">
                       <p className="fw-bold mb-1">Safe and solid</p>
                       <p className="text-muted mb-0">
-                        Eum nostrum fugit numquam, voluptates veniam neque
-                        quibusdam ullam aspernatur odio soluta, quisquam dolore
-                        animi mollitia a omnis praesentium, expedita nobis!
+                      To encourage new video content creators .
                       </p>
                     </div>
                   </div>
@@ -189,10 +181,7 @@ const Home = () => {
                     <div className="flex-grow-1 ms-4">
                       <p className="fw-bold mb-1">Extremely fast</p>
                       <p className="text-muted mb-0">
-                        Enim cupiditate, minus nulla dolor cumque iure eveniet
-                        facere ullam beatae hic voluptatibus dolores
-                        exercitationem? Facilis debitis aspernatur amet nisi
-                        iure eveniet facere?
+                      To provide high quality shooting equipments at doorstep
                       </p>
                     </div>
                   </div>
@@ -211,10 +200,7 @@ const Home = () => {
                     <div className="flex-grow-1 ms-4">
                       <p className="fw-bold mb-1">Live analytics</p>
                       <p className="text-muted mb-0">
-                        Illum doloremque ea, blanditiis sed dolor laborum
-                        praesentium maxime sint, consectetur atque ipsum ab
-                        adipisci ullam aspernatur odio soluta, quisquam dolore
-                      </p>
+                      Visitors can rent shooting equipment by visiting my website.                      </p>
                     </div>
                   </div>
                 </div>
@@ -255,8 +241,9 @@ const Home = () => {
                       <h3 className="fw-bold text-primary mb-3">1000</h3>
                       <h5 className="text-muted mb-3">Components</h5>
                       <p className="text-muted">
-                        Laudantium totam quas cumque pariatur at doloremque hic
-                        quos quia eius
+                      Provides the service of buying and renting the professional 
+                      shooting equipments.
+
                       </p>
                     </div>
                   </div>
@@ -278,8 +265,9 @@ const Home = () => {
                       <h3 className="fw-bold text-primary mb-3">70%</h3>
                       <h5 className="text-muted mb-3">Growth</h5>
                       <p className="text-muted">
-                        Eum nostrum fugit numquam, voluptates veniam neque
-                        quibusdam ullam
+                      The purpose of developing of this project to provides on-line 
+                        service of shooting professionals to buy or rent the
+                         equipment as per their need. 
                       </p>
                     </div>
                   </div>
@@ -298,11 +286,12 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="card-body">
-                      <h3 className="fw-bold text-primary mb-3">49</h3>
-                      <h5 className="text-muted mb-3">Projects</h5>
+                      <h3 className="fw-bold text-primary mb-3">3</h3>
+                      <h5 className="text-muted mb-3">Based</h5>
                       <p className="text-muted">
-                        Cupiditate enim, minus nulla dolor cumque iure eveniet
-                        facere ullam
+                      This project is based on single page web application.
+                       ex: - Gmail, Facebook, Github, Flipkart, etc.
+
                       </p>
                     </div>
                   </div>
@@ -326,7 +315,7 @@ const Home = () => {
             data-v-271253ee=""
           >
             <section className="mb-10 text-center">
-              <h2 className="fw-bold mb-5">Photographer</h2>
+              <h2 className="fw-bold mb-5">Professionals</h2>
               {/* Carousel wrapper */}
               <div
                 id="carouselExampleControls"
@@ -345,61 +334,17 @@ const Home = () => {
                     />
                     <div className="row d-flex justify-content-center">
                       <div className="col-lg-8">
-                        <h5 className="mb-3">Maria Kate</h5>
-                        <p>Photographer</p>
-                        <p className="text-muted">
-                          <i className="fas fa-quote-left pe-2" />
-                          <span>
-                            In ac turpis justo. Vivamus auctor quam vitae odio
-                            feugiat pulvinar. Sed semper ligula sed lorem
-                            tincidunt dignissim. Nam sed cursus lectus. Proin
-                            non rutrum magna. Proin gravida, justo et imperdiet
-                            tristique, turpis nisi viverra est, nec posuere ex
-                            arcu sit amet erat. Sed a dictum sem. Duis pretium
-                            condimentum nulla.
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                    <ul className="list-unstyled d-flex justify-content-center text-warning mb-0">
-                      <li>
-                        <i className="fas fa-star fa-sm" />
-                      </li>
-                      <li>
-                        <i className="fas fa-star fa-sm" />
-                      </li>
-                      <li>
-                        <i className="fas fa-star fa-sm" />
-                      </li>
-                      <li>
-                        <i className="fas fa-star fa-sm" />
-                      </li>
-                      <li>
-                        <i className="far fa-star fa-sm" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      className="rounded-circle shadow-1-strong mb-4"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
-                      alt="avatar"
-                      style={{ width: 150, height: 150 }}
-                      aria-controls="#picker-editor"
-                      draggable="false"
-                    />
-                    <div className="row d-flex justify-content-center">
-                      <div className="col-lg-8">
-                        <h5 className="mb-3">John Doe</h5>
+                        <h5 className="mb-3">Shivani Tiwari</h5>
                         <p>Web Developer</p>
                         <p className="text-muted">
                           <i className="fas fa-quote-left pe-2" />
                           <span>
-                            Maecenas auctor, quam eget tincidunt pretium, felis
-                            diam semper turpis, sed scelerisque diam libero
-                            facilisis libero. Quisque vitae semper metus.
-                            Aliquam eu dui aliquam, faucibus metus quis,
-                            elementum nunc. .
+                          Seeking a challenging opportunity in a dynamic environment where 
+                          innovation, education and sense of ownership are valued and 
+                          encouraged, and to secure entry-level position in IT sector
+                           that would entrust me with using my knowledge and skills
+                            for growth of organizations.  
+
                           </span>
                         </p>
                       </div>
@@ -433,15 +378,17 @@ const Home = () => {
                     />
                     <div className="row d-flex justify-content-center">
                       <div className="col-lg-8">
-                        <h5 className="mb-3">Anna Deynah</h5>
-                        <p>UX Designer</p>
+                        <h5 className="mb-3">Rinka Maurya</h5>
+                        <p>Web Developer</p>
                         <p className="text-muted">
                           <i className="fas fa-quote-left pe-2" />
                           <span>
-                            Duis sagittis, turpis in ullamcorper venenatis,
-                            ligula nibh porta dui, sit amet rutrum enim massa in
-                            ante. Curabitur in justo at lorem laoreet ultricies.
-                            Nunc ligula felis, sagittis eget nisi vitae.
+                          Seeking a challenging opportunity in a dynamic environment where 
+                          innovation, education and sense of ownership are valued and
+                           encouraged, and to secure entry-level position in IT sector
+                            that would entrust me with using my knowledge and skills
+                             for growth of organizations.  
+
                           </span>
                         </p>
                       </div>
@@ -464,6 +411,7 @@ const Home = () => {
                       </li>
                     </ul>
                   </div>
+                  
                 </div>
                 <button
                   className="carousel-control-prev"
