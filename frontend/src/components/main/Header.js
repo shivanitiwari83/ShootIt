@@ -13,7 +13,7 @@ const Header = () => {
             href="#"
           >
             <img
-              src="logo.png"
+              src="/logo.png"
               height={30}
               alt="Shoot It"
               loading="lazy"
@@ -31,6 +31,11 @@ const Header = () => {
           <li className="nav-item me-3 me-lg-1 active">
             <NavLink className="nav-link" to="/main/login" data-mdb-toggle="tooltip" title="Login Page">
               <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>
+            </NavLink>
+          </li>
+          <li className="nav-item me-3 me-lg-1 active">
+            <NavLink className="nav-link" to="/main/signup" data-mdb-toggle="tooltip" title="Signup Page">
+              <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
             </NavLink>
           </li>
           <li className="nav-item me-3 me-lg-1 active">

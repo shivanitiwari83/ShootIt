@@ -51,6 +51,7 @@ const AddEquipment = () => {
   };
 
   return (
+    <div style={{backgroundColor: 'lightblue'}}>
     <div className="container">
       <div className="card">
         <div className="card-body">
@@ -120,6 +121,7 @@ const AddEquipment = () => {
           </Formik>
         </div>
       </div>
+    </div>
     </div>
   );
 };
