@@ -37,9 +37,9 @@ const Home = () => {
                     >
                       <div className="card-body px-4 pb-5 pt-md-0 px-md-5 shadow-5">
                         <h1 className="my-5 display-4 fw-bold ls-tight">
-                          <span>The best offer</span> <br />
+                          <span>Shootit</span> <br />
                           <span className="text-primary">
-                            for your business
+                            Progressive Web Application
                           </span>
                         </h1>
                         <a

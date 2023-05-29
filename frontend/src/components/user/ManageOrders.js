@@ -8,7 +8,7 @@ const ShowOrder = ({ formdata }) => {
   return (
     <div className="card">
       <div className="card-body">
-        <h3>Novel Details</h3>
+        <h3>Equipment Details</h3>
         <hr />
         {/* image */}
         <img
@@ -19,7 +19,7 @@ const ShowOrder = ({ formdata }) => {
 
         <p className="fw-bold m-0">Equipment</p>
         <h4>{formdata.equipment.title}</h4>
-        <p className="fw-bold m-0">Author</p>
+        <p className="fw-bold m-0">Product</p>
         <h4>{formdata.equipment.category}</h4>
         <p className="fw-bold m-0">Order ID</p>
         <h4>{formdata._id}</h4>
@@ -81,7 +81,7 @@ const ManageOrders = () => {
               <thead>
                 <tr>
                   <th>Equipment</th>
-                  <th>Novel Author</th>
+                  <th>Product </th>
                   <th>Purchased/Rented on</th>
                   <th></th>
                 </tr>

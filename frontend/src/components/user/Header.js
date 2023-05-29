@@ -79,7 +79,7 @@ const Header = () => {
                 alt="Black and White Portrait of a Man"
                 loading="lazy"
               />
-              <strong className="d-none d-sm-block ms-1">John</strong>
+              <strong className="d-none d-sm-block ms-1">ID</strong>
             </a>
           </li>
           
